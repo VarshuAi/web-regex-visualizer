@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Regex Pattern Visualizer</title>
+    <style>
+        body { background: #050505; color: #00FF88; font-family: monospace; padding: 20px; text-align: center; }
+        input { background: #000; border: 1px solid #003318; padding: 10px; color: #00FF88; font-family: monospace; width: 300px; }
+        .states { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
+        .state { border: 2px solid #003318; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: #001A0D; }
+        .state.active { border-color: #FFB800; color: #FFB800; box-shadow: 0 0 10px #FFB800; }
+    </style>
+    <script>
+        function visualize() {
+            const val = document.getElementById('regex').value;
+            const states = document.getElementById('states');
+            states.innerHTML = '';
+            for (let i = 0; i < val.length + 1; i++) {
+                const node = document.createElement('div');
+                node.className = 'state' + (i === val.length ? ' active' : '');
+                node.textContent = 'q' + i;
+                states.appendChild(node);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>[+] REGULAR EXPRESSION STATE MACHINE VISUALIZER</h2>
+    <input type="text" id="regex" placeholder="Type regex pattern (e.g. a*b+)" oninput="visualize()"/>
+    
+    <div class="states" id="states">
+        <div class="state active">q0</div>
+    </div>
+</body>
+</html>
