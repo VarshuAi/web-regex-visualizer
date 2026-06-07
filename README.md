@@ -38,7 +38,7 @@ version: 1.0
 type: Repository
 author: VarshuAi
 description: >
-  Interactive canvas-based state machine visualizer for regular expression transitions.
+  name: web-regex-visualizer version: 1.0 type: Repository author: VarshuAi description: >   Interactive canvas-based state machine visualizer for regular expression transitions. primary_tech: HTML
 primary_tech: HTML
 ```
 
